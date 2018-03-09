@@ -3,18 +3,18 @@
 %
 % This introductory chapter will briefly provide context for the material/results presented in this report and give motivation and a description of the problem to be solved. A literature review summarizes existing relevant knowledge, and establishes the foundation of the later control system. The scope of the work is then defined through a list of assumptions. Finally, the contributions of the thesis are defined and elaborated.
 
-This is a master thesis written in cooperation between NTNU and Hymatek controls. Hymatek controls is a company located in Oslo, that delivers equipment and control systems to hydro electric power plants world wide. The company is now extending its portfolio with condition monitoring of power plants, to enable predictive maintenance using machine learning. This thesis manly focuses on the novelty or anomaly detection part of condition monitoring. Predicting and confirming erroneous system conditions earlier than what is captured with a normal plants control system.   
+% This is a master thesis written in cooperation between NTNU and Hymatek controls. Hymatek controls is a company located in Oslo, that delivers equipment and control systems to hydro electric power plants world wide. The company is now extending its portfolio with condition monitoring of power plants, to enable predictive maintenance using machine learning. This thesis manly focuses on the novelty or anomaly detection part of condition monitoring. Predicting and confirming erroneous system conditions earlier than what is captured with a normal plants control system.   
 
-This chapter provides an introduction to the work done, describing the motivation and problem describtion for the thesis. In addition a literature review looking into state of the art techniques used for condition monitoring. 
+% This chapter provides an introduction to the work done, describing the motivation and problem describtion for the thesis. In addition a literature review looking into state of the art techniques used for condition monitoring. 
 
 
-\section{Motivation}\label{sec:motivation}
+% \section{Motivation}\label{sec:motivation}
 
-% What is the motivation for considering the problems/question that you approach in your work? Why is this an interesting problem? The motivation should instead describe why it is interesting from a societal point of view, and/or from a scientific point of view.
+% % What is the motivation for considering the problems/question that you approach in your work? Why is this an interesting problem? The motivation should instead describe why it is interesting from a societal point of view, and/or from a scientific point of view.
 
-The need for renewable and stable energy sources is great in both Norway and Europe. Hydro electric powerplants are seen as one of the most stable and cleanest energy sources one can find. Hence, increasing the productivity and decreasing the down time of hydro electric power plants will have a positive influence on the European energy market. Introducing condition monitoring and early fault detection could help reduce the number of breakdowns, as components can be replaced before breaking down. This would also remove the risk of functioning components breaking down as a domino effect. In many cases it is not possible to have spare parts for all components available at a plant at all times. This means that unexpected breakdowns, can in many cases extend the downtime by the delivery time for the needed components.
+% The need for renewable and stable energy sources is great in both Norway and Europe. Hydro electric powerplants are seen as one of the most stable and cleanest energy sources one can find. Hence, increasing the productivity and decreasing the down time of hydro electric power plants will have a positive influence on the European energy market. Introducing condition monitoring and early fault detection could help reduce the number of breakdowns, as components can be replaced before breaking down. This would also remove the risk of functioning components breaking down as a domino effect. In many cases it is not possible to have spare parts for all components available at a plant at all times. This means that unexpected breakdowns, can in many cases extend the downtime by the delivery time for the needed components.
 
-Unexpected downtime for maintenance is also more expensive than planned shut downs for maintenance. Many components used in a hydro electric powerplants are large and the duration of delivery might be long. This means that an unplanned shut down due to break down could cause a plant to stay inoperable longer then what is the case with planned maintenance. Increasing the knowledge of the condition of the plants can then increase profits and stability in the electrical grid. 
+% Unexpected downtime for maintenance is also more expensive than planned shut downs for maintenance. Many components used in a hydro electric powerplants are large and the duration of delivery might be long. This means that an unplanned shut down due to break down could cause a plant to stay inoperable longer then what is the case with planned maintenance. Increasing the knowledge of the condition of the plants can then increase profits and stability in the electrical grid. 
 
 
 \section{Problem definition}
@@ -23,9 +23,9 @@ Unexpected downtime for maintenance is also more expensive than planned shut dow
 
 No exact problem definition were provided by Hymatek, they provided a dataset containing process-data from $21$ hydro electric power plants in the period $2014-2017$, and gave no restriction on which plants and cases that could be investigated. A detailed operation history for the power plants were also provided. This was used to define the problem definition.  
 
-In the data set, there are three power plants that have pelton turbines with measurement of their needle position. More information about a pelton turbine can be found in chapter \ref{cha:data}. One of the power plants had recorded several issues with the control and behaviour of the needles during operation. There were many interesting events spread out over many of the power plants, but one major benefit with the pelton needle case, was that there was one plant with several reported issues for the same component. In most of the other cases, there were only recorded one incident on one plant, making them hard to analyze and validate. The fact that there also were two power plants in addition that had the same process signals without reported issues, opened up the posiblity for testing and validating the chosen techniques not only on data from the faulty plant. This also introduced the possiblity to validate how well and how easy the different techniques could adapt to new plants.    
+In the data set, there are three power plants that have pelton turbines with measurement of their needle position. More information about a pelton turbine can be found in chapter \ref{cha:data}. One of the power plants had recorded several issues with the control and behaviour of the needles during operation. There were many interesting events spread out over many of the power plants, but one major benefit with the pelton needle case, was that there was one plant with several reported issues for the same component. In most of the other cases, there were only recorded one incident on one plant, making them hard to analyze and validate. The fact that there also were two power plants in addition that had the same process signals without reported issues, opened up the possibility for testing and validating the chosen techniques not only on data from the faulty plant. This also introduced the possibility to validate how well and how easy the different techniques could adapt to new plants.    
 
-Finally, quality and available process variables varied alot from plant to plant. One of the biggest issues was that the majority of the process signals were not sampled at a constant frequency. Often only one processignal were logged for each time stamp giving a data matrix not straight forward to analyze. For the pelton needle case, sample frequency and simultaneous sampling of several process signals were among the best in the dataset, making it a a good case study.  
+Finally, quality and available process variables varied a lot from plant to plant. One of the biggest issues was that the majority of the process signals were not sampled at a constant frequency. Often only one process-signal were logged for each time stamp giving a data matrix not straight forward to analyze. For the pelton needle case, sample frequency and simultaneous sampling of several process signals were among the best in the dataset, making it a a good case study.  
 
 
 Based on the arguments above, the pelton needle case was chosen as the focus of the thesis. The following points were then defined as a basis for the analysis. 
@@ -35,9 +35,9 @@ Based on the arguments above, the pelton needle case was chosen as the focus of 
     \item Discuss the issue with uneven sample frequency for different signals, mention different techniques for interpolation of missing data, is this a good option? why or why not? 
     \item Look at different methods for unsupervised feature selection. The datasets holds many signals, which ones can hold vital information for the needle control problem? 
     \item Look at different methods for supervised feature selection, using the RMSE between the pairwise needles as a target variable. 
-    \item Analyze the features select in the two different techniques, are they similar? If not, what seems to be the main difference between the two techniques? 
-    \item use principal component analysis (PCA) and kernel PCA to reduce the number of features by linear an non linear combinations of the orignal feature set. Create a reduced data-matrix based on the principal componentes which again can be used as input for the machine learning algorithms. 
-    \item Look into anomaly/novelty detection comparing the performance of different algorithms, on the different feature sets. The following list is a suggestion to algorithms, at least two should be used. Compare the algorithms in regards of performance, complexity, runtime, etc. 
+    \item Analyze the features selected in the two different techniques, are they similar? If not, what seems to be the main difference between the two techniques? 
+    \item use principal component analysis (PCA) and kernel PCA to reduce the number of features by linear an non linear combinations of the original feature set. Create a reduced data-matrix based on the principal components which again can be used as input for the machine learning algorithms. 
+    \item Look into anomaly/novelty detection comparing the performance of different algorithms, on the different feature sets. The following list is a suggestion to algorithms, at least two should be used. Compare the algorithms in regards of performance, complexity, run-time, etc. 
     \begin{itemize}
         \item One class support vector machine
         \item Density based anomaly detection, k-nearest neighbors
@@ -62,7 +62,9 @@ Based on the arguments above, the pelton needle case was chosen as the focus of 
 %     The data is provided by Hymatek controls, and is collected from more than 30 hydro electric power plants around Norway, in the period between $01.01.2014$ and $01.07.2017$. 
 
 % \section{Assumptions}\label{sec:assumptions}
-% Include this section if it is necessary to state some assumptions that you have made to restrict the scope of the thesis.
+% Mention that to enable a complete analysis a small set of algorithms and techniques were chosen to work with, and that there might be more advanced methods that  could lead to superior performance. 
+
+% filter, vs wrapper vs embedded. 
 
 % \section{Background and Contributions}\label{sec:contributions}
 % Here you describe the main contributions of your project work: What are the new results - the achievements - of your work. 

@@ -1,10 +1,23 @@
 \chapter{Techniques}\label{chap:techniques}
 
-Reduction of the number of features in the data is desirable, firstly it simplifies the model, makin it computationally faster. Secondly, a simpler model is easier to interpret. A good understadning of how and why an algorithm behaves as it does is important! There are two main techniques for reducing the feature size, feature selection, and dimensionality reduction. The former, removes uninformative and redundant features from the feature set. The latter creates new features either as linear or non-linear combinations of the original feature set.
+Reduction of the number of features in the data is desirable, firstly it simplifies the model, makin it computationally faster. Secondly, a simpler model is easier to interpret. A good understadning of how and why an algorithm behaves as it does is important! 
 
 \section{Feature selection}\label{sec:feature_selec}
+    Analyzing a dataset with $251$ features is not a trival task. The complexity of the problem grows with the number of features and the ability to interpret shrinks. In a case working on real world data, where the goal is to extract more knowledge about a the plant, not only getting good results on predicting erroneous conditions is important, but understanding how ans why the algorithm works is also a big part. Early warnings is a great addition to a power plants automation, but clearly being able to interpret and understand why the situation has occurred is even better. There are two main techniques for reducing the feature size, feature selection, and dimensionality reduction. The former, tries to remove the least informative and the redundant features from the feature set. The latter creates new features either as linear or non-linear combinations of the original feature set, keeping only the dimensions that shows the most variance. Feature selection is again separated into supervised and non-supervised selection. In the supervised case, one have a set of features and a target variable, hence one want to keep the features that is related to the target variable. For unsupervised feature selection, there is no target variable to help remove uninformative or redundant features, there is no way to confirm that the best subset of features are selected, and this area is not researched as much as the supervised case.     
 
-    \subsection{}
+
+\section{Unsupervised feature selection}\label{sec:unsup_feat_reduc}
+    
+    \subsection{Variance threshold}\label{subsec:var_thres}
+    
+    \subsection{Laplacian score}
+    
+    
+
+\section{Supervised feature selection}\label{sec:sup_feat_reduc}
+
+    \subsection{Not sure which ones to use per now}
+    
 
 \section{Dimensionality reduction}\label{sec:dim_red}
 The dimensions of the new set is then often decied by how much the new features explain of the variance in the old dataset. 
