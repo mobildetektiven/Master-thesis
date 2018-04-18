@@ -4,6 +4,20 @@
 \graphicspath{ {report/figures} }
 
 \usepackage{config}
+% err math function
+\DeclareMathOperator\err{err}
+
+\usepackage{amsmath}
+\usepackage[space]{grffile}
+\usepackage[colorinlistoftodos]{todonotes}
+
+%citing: write all articles in the .bib file. Only the ones that are cited in the project will appear
+% in the bibliography
+% \usepackage{biblatex}
+% \addbibresource{master.bib}
+
+%getting bold symbols in math mode
+\usepackage{bm}
 
 
 \begin{document}
@@ -23,17 +37,16 @@
 \mainmatter
 \pagestyle{headings}
 \input{report/tex/1-introduction.tex}
+\input{report/tex/03-literaryStudy.tex}
 \input{report/tex/2-data.tex}
-\input{report/tex/3-cases}
-\input{report/tex/4-techniques.tex}
+% \input{report/tex/3-cases}
+% \input{report/tex/4-techniques.tex}
 \input{report/tex/5-analysis}
 \input{report/tex/6-discussion}
 \input{report/tex/10-conclusions}
 
-% \appendix
+\appendix
 
-% \backmatter
-% \addcontentsline{toc}{chapter}{\bibname}
-% \bibliography{bib/bibliography}
-
+\backmatter
+\bibliography{references}
 \end{document}

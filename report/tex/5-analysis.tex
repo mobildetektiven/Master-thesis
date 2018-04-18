@@ -1,13 +1,40 @@
 %!TEX root = ../Thesis.tex
 \chapter{Analysis}\label{cha:analysis}
-This chapter contains the analysis performed on the cases specified in section \ref{sec:cases}. 
+This chapter contains the analysis performed on the case specified in section \ref{sec:cases}. 
 
 
-
-
-
+    Once the case was defined, one could start looking into the data with more detail. As mentioned, 
     
     
+    \section{Anomaly detection}
+        \subsection{SVM}
+        
+        \subsection{KDE}
+        
+        \subsection{LSTM}
+        
+    \section{Prepossessing steps}
+        \begin{itemize}
+            \item Remove data from no operation/ no power production
+            \item Remove nan row, must have a complete data matrix 
+            \item time differencing to remove trends? mostly for time series forecasting
+        \end{itemize}
+    \section{Anomaly detection of need raw data signals}
+        Show plot and performance comparing the three chosen algorithms. 
+    
+    \section{Anomaly detection using PCA to reduce feature size}
+        Show plot and performance comparing the three chosen algorithms. 
+    
+    \section{Hourly dataset anlysis?}
+        If time and interest this can be added to the thesis 
+    
+
+    
+
+    
+    not possible to use any timeseries forecasting since the data is not sampled at even frequencies. hense using a regression model and estimating an anomaly based on differences from the sampled and predicted data becomes unvalid. 
+    
+    bruke kde men det vil antagelig ikkje gje gode resultat sidan samplinga mi er dårlig, og eg ikkje har nok data spredd godt nok utover tilstandsrommet. 
 
 % \section{Unsupervised dimensionallity reduction}\label{sec:dim_reduc}
 
