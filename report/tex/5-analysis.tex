@@ -6,11 +6,11 @@ This chapter contains the analysis performed on the case specified in section \r
     Once the case was defined, one could start looking into the data with more detail. As mentioned, 
     
     
-    \section{Anomaly detection}
+    \section{Anomaly detection using needle process signals}
         \subsection{SVM}
         
         \subsection{KDE}
-        
+            best bandwidth = 0.1
         \subsection{LSTM}
         
     \section{Prepossessing steps}
@@ -29,7 +29,10 @@ This chapter contains the analysis performed on the case specified in section \r
         If time and interest this can be added to the thesis 
     
 
-    
+    \section{Artificial case}
+        I have studied the needle error a bit further and made a hypothesis. The error seems to only appear when the needle is closing. 03032017, the needle has issues when closing below 46\%, but it seems like it has had the same problems earlier, only at lower opening \%. My thought is that the hydraulics controlling the needle position is having issues with friction or oil flow in one direction. As the differential pressure that closes the needle decrease, this makes the rate of closing decrease. As the oil flow gets more and more restricted, the needle get operational problems at higher openings (higher differential pressure)
+        
+        Could this be a possible description of the problem? I have created an error that replicates this behaviour on one of the error free needle pairs. 
 
     
     not possible to use any timeseries forecasting since the data is not sampled at even frequencies. hense using a regression model and estimating an anomaly based on differences from the sampled and predicted data becomes unvalid. 

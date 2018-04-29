@@ -1,6 +1,21 @@
 %!TEX root = ../Thesis.tex
 \chapter{Discussion}\label{cha:discussion}
 
+\section{Balanced datasets}
+    
+Acquiring a balanced dataset, cite Tarassenko L. 
+
+"When building a dataset for training a data-driven model, it is important that data are acquired as uniformly as possible over the system’s entire operating range. A jet engine spends much of its time operating at “cruise” conditions, with much less time spent operating under takeoff or landing conditions. If training data were drawn randomly from the entire flight, then this would result in a strong bias toward cruise conditions, simply because there would be many more feature vectors derived from periods of cruise operation. A balanced dataset is constructed by rejecting feature vectors during steady-state conditions if the change in engine speed with respect to that associated with the previous feature vector is below a given threshold. The effect of this is shown in Figure 1, in which a histogram of feature vector speeds from the original dataset shows a very dominant peak in the range from 80 to $85\%$ of maximum shaft speed, corresponding to cruise conditions. After rejection of consecutive feature vectors with similar speeds, the distribution is much more uniform across the whole speed range. This type of approach is used"
+
+To acquire a balanced dataset all samples where the plant is not operable is removed. But I need to make sure I don't remove data where one needle is stuck but the other one is operated! Hence both need to be zero for me to remove the sample! 
+add figure or table showing the number of samples each day as the number of process variables are increased. 
+
+
+\section{Differencing}
+
+
+\section{Number of process variables included in the analysis}
+
 
 \section{The data}
     Several issues arose once starting working with the data. A problem which most likely is relevant to most industries today is that having data is far from having good data. Everyone has heard about the importance of data, and the big data buzzword. Starting working with the thesis, having an enourmous $90Gb$ of data available seemed like way to much. However as the work progressed, it was discoverered that there were several issues with the data. 
