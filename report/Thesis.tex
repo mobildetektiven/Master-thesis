@@ -6,6 +6,14 @@
 \usepackage{config}
 % err math function
 \DeclareMathOperator\err{err}
+\DeclareMathOperator\std{std}
+\DeclareMathOperator\abs{abs}
+\DeclareMathOperator\mean{mean}
+\DeclareMathOperator\outliers{outliers}
+\DeclareMathOperator\inliers{inliers}
+\DeclareMathOperator\score{score}
+
+
 \usepackage{caption}
 \usepackage{amsmath}
 \usepackage[space]{grffile}
@@ -38,6 +46,7 @@
 \pagestyle{headings}
 \input{report/tex/1-introduction.tex}
 \input{report/tex/03-literaryStudy.tex}
+\input{report/tex/3-implementation.tex}
 \input{report/tex/2-data.tex}
 % \input{report/tex/3-cases}
 % \input{report/tex/4-techniques.tex}
@@ -46,7 +55,8 @@
 \input{report/tex/10-conclusions}
 
 \appendix
-
+\input{report/appendix.tex}
 \backmatter
-\bibliography{references}
+\bibliographystyle{IEEEtran}
+\bibliography{references,project}
 \end{document}
