@@ -1,7 +1,11 @@
 %!TEX root = ../Thesis.tex
 \chapter*{\englishabstractname}
 \addcontentsline{toc}{chapter}{\englishabstractname}
-%
-The abstract is a short summary of the contents of the report.
-%
+
+Much research can be found on condition monitoring for many industries. There are, however, very little research on the use of condition monitoring in hydroelectric power plants. Most of the existing research involves methods that require both normal and abnormal data, and need data for all failure modes that one want to monitor. A literature study investigates this field, and it is found that support vector machines and neural networks have been successfully used for condition monitoring of known failure modes. 
+
+Anomaly detection is presented as it enables the detection of anomalies in the process data, with only normal process data available. Three different methods for anomaly detection are presented, support vector machines, kernel density estimation and long short term neural networks. In addition, different techniques for feature and dimensionality reduction are presented. A data set containing data from 27 power plants is analyzed, and a reported incident with operational problems for the needles of a Pelton turbine is extracted for analysis. Data from two different plants and three different turbines are included in the analysis to investigate cross plant performance. An artificial error replicating the operational problems for the reported incident is created to verify how early the anomaly detection techniques can detect system degradation. In addition, two Pelton turbine start failures are included in the analysis to verify that the methods correctly detect abnormal system data. 
+
+All three methods are shown able to detect the operational problems for the Pelton needles. However, the one class support vector machine is shown to very dependent on the choice of hyperparameters with regards to the training data. Kernel density estimation and long short term recurrent neural network show better performance and are more robust with regards to parameterization and training data. It is also shown that they can detect the early signs of the system degradation seen leading up to the reported incident with the Pelton needles. 
+
 \clearpage
